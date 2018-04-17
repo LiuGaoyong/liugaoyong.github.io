@@ -99,18 +99,18 @@
 
 
 
-  <meta name="description" content="grep 命令1. 作用： 根据模式搜索文本，并将符合模式的文本显示出来  2. 选项： –color  ： 颜色输出   -i       :  不区分大小写输出   -v       :  显示没有匹配到的字符串   -o       :  只显示被匹配到的字符串   -E(=egrep) : 使用扩展正则表达式进行匹配（grep 默认使用基本正则表达式进行匹配）   -F(=fgrep) :">
+  <meta name="description" content="grep 命令作用： 根据模式搜索文本，并将符合模式的文本显示出来  选项： –color  ： 颜色输出   -i       :  不区分大小写输出   -v       :  显示没有匹配到的字符串   -o       :  只显示被匹配到的字符串   -E(=egrep) : 使用扩展正则表达式进行匹配（grep 默认使用基本正则表达式进行匹配）   -F(=fgrep) : 不使用正则">
 <meta name="keywords" content="Linux,Shell,bash,grep">
 <meta property="og:type" content="article">
 <meta property="og:title" content="grep 与正则表达式">
 <meta property="og:url" content="http://yoursite.com/2018/04/14/grep/index.html">
 <meta property="og:site_name" content="胖勇de小窝">
-<meta property="og:description" content="grep 命令1. 作用： 根据模式搜索文本，并将符合模式的文本显示出来  2. 选项： –color  ： 颜色输出   -i       :  不区分大小写输出   -v       :  显示没有匹配到的字符串   -o       :  只显示被匹配到的字符串   -E(=egrep) : 使用扩展正则表达式进行匹配（grep 默认使用基本正则表达式进行匹配）   -F(=fgrep) :">
+<meta property="og:description" content="grep 命令作用： 根据模式搜索文本，并将符合模式的文本显示出来  选项： –color  ： 颜色输出   -i       :  不区分大小写输出   -v       :  显示没有匹配到的字符串   -o       :  只显示被匹配到的字符串   -E(=egrep) : 使用扩展正则表达式进行匹配（grep 默认使用基本正则表达式进行匹配）   -F(=fgrep) : 不使用正则">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-14T10:23:40.737Z">
+<meta property="og:updated_time" content="2018-04-17T11:57:41.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="grep 与正则表达式">
-<meta name="twitter:description" content="grep 命令1. 作用： 根据模式搜索文本，并将符合模式的文本显示出来  2. 选项： –color  ： 颜色输出   -i       :  不区分大小写输出   -v       :  显示没有匹配到的字符串   -o       :  只显示被匹配到的字符串   -E(=egrep) : 使用扩展正则表达式进行匹配（grep 默认使用基本正则表达式进行匹配）   -F(=fgrep) :">
+<meta name="twitter:description" content="grep 命令作用： 根据模式搜索文本，并将符合模式的文本显示出来  选项： –color  ： 颜色输出   -i       :  不区分大小写输出   -v       :  显示没有匹配到的字符串   -o       :  只显示被匹配到的字符串   -E(=egrep) : 使用扩展正则表达式进行匹配（grep 默认使用基本正则表达式进行匹配）   -F(=fgrep) : 不使用正则">
 
 
 
@@ -400,10 +400,10 @@
       
 
       
-        <h3 id="grep-命令"><a href="#grep-命令" class="headerlink" title="grep 命令"></a>grep 命令</h3><h5 id="1-作用："><a href="#1-作用：" class="headerlink" title="1. 作用："></a><strong>1. 作用</strong>：</h5><blockquote>
+        <h3 id="grep-命令"><a href="#grep-命令" class="headerlink" title="grep 命令"></a>grep 命令</h3><h4 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h4><blockquote>
 <p>根据模式搜索文本，并将符合模式的文本显示出来</p>
 </blockquote>
-<h5 id="2-选项："><a href="#2-选项：" class="headerlink" title="2. 选项："></a><strong>2. 选项</strong>：</h5><blockquote>
+<h4 id="选项："><a href="#选项：" class="headerlink" title="选项："></a>选项：</h4><blockquote>
 <p>–color  ： 颜色输出</p>
 </blockquote>
 <blockquote>
@@ -422,7 +422,7 @@
 <p>-F(=fgrep) : 不使用正则表达式，直接使用原字符串进行匹配</p>
 </blockquote>
 <hr>
-<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h5 id="1-基本正则表达式："><a href="#1-基本正则表达式：" class="headerlink" title="1. 基本正则表达式："></a><strong>1. 基本正则表达式：</strong></h5><blockquote>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h4 id="基本正则表达式："><a href="#基本正则表达式：" class="headerlink" title="基本正则表达式："></a>基本正则表达式：</h4><blockquote>
 <p>元字符</p>
 </blockquote>
 <table>
@@ -534,7 +534,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="2-扩展正则表达式："><a href="#2-扩展正则表达式：" class="headerlink" title="2. 扩展正则表达式："></a><strong>2. 扩展正则表达式：</strong></h5><blockquote>
+<h4 id="扩展正则表达式："><a href="#扩展正则表达式：" class="headerlink" title="扩展正则表达式："></a>扩展正则表达式：</h4><blockquote>
 <p>元字符（==同基本==）</p>
 </blockquote>
 <table>
@@ -668,12 +668,12 @@
 </tr>
 </tbody>
 </table>
-<h3 id="☆实例命令或脚本"><a href="#☆实例命令或脚本" class="headerlink" title="☆实例命令或脚本"></a>☆实例命令或脚本</h3><h5 id="1、显示-proc-meminfo文件中以不区分大小的s开头的行；"><a href="#1、显示-proc-meminfo文件中以不区分大小的s开头的行；" class="headerlink" title="1、显示/proc/meminfo文件中以不区分大小的s开头的行；"></a>1、显示/proc/meminfo文件中以不区分大小的s开头的行；</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grep -i <span class="string">'^s'</span> /proc/meminfo</span><br><span class="line"></span><br><span class="line">grep <span class="string">'^[sS]'</span> /proc/meminfo</span><br></pre></td></tr></table></figure>
-<h5 id="2、显示-etc-passwd中以nologin结尾的行"><a href="#2、显示-etc-passwd中以nologin结尾的行" class="headerlink" title="2、显示/etc/passwd中以nologin结尾的行;"></a>2、显示/etc/passwd中以nologin结尾的行;</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'nologin$'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
-<h5 id="3、显示-etc-inittab中以-开头，且后面跟一个或多个空白字符，而后又跟了任意非空白字符的行；"><a href="#3、显示-etc-inittab中以-开头，且后面跟一个或多个空白字符，而后又跟了任意非空白字符的行；" class="headerlink" title="3、显示/etc/inittab中以#开头，且后面跟一个或多个空白字符，而后又跟了任意非空白字符的行；"></a>3、显示/etc/inittab中以#开头，且后面跟一个或多个空白字符，而后又跟了任意非空白字符的行；</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^#[[:space:]]\&#123;1,\&#125;[^[:space:]]*'</span> /etc/inittab</span><br></pre></td></tr></table></figure>
-<h5 id="4、显示-etc-inittab中包含了-一个数字-即两个冒号中间一个数字-的行；"><a href="#4、显示-etc-inittab中包含了-一个数字-即两个冒号中间一个数字-的行；" class="headerlink" title="4、显示/etc/inittab中包含了:一个数字:(即两个冒号中间一个数字)的行；"></a>4、显示/etc/inittab中包含了:一个数字:(即两个冒号中间一个数字)的行；</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">':[0-9]:'</span> /etc/inittab</span><br></pre></td></tr></table></figure>
-<h5 id="5、显示-boot-grub-grub-conf文件中以一个或多个空白字符开头的行；"><a href="#5、显示-boot-grub-grub-conf文件中以一个或多个空白字符开头的行；" class="headerlink" title="5、显示/boot/grub/grub.conf文件中以一个或多个空白字符开头的行；"></a>5、显示/boot/grub/grub.conf文件中以一个或多个空白字符开头的行；</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^[[:space:]]\&#123;1,\&#125;'</span> /boot/grub/grub.conf</span><br></pre></td></tr></table></figure>
-<h5 id="6、显示-etc-inittab文件中以一个数字开头并以一个与开头数字相同的数字结尾的行；"><a href="#6、显示-etc-inittab文件中以一个数字开头并以一个与开头数字相同的数字结尾的行；" class="headerlink" title="6、显示/etc/inittab文件中以一个数字开头并以一个与开头数字相同的数字结尾的行；"></a>6、显示/etc/inittab文件中以一个数字开头并以一个与开头数字相同的数字结尾的行；</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^\([0-9]\).*\1$'</span> /etc/inittab</span><br></pre></td></tr></table></figure>
+<h3 id="☆实例命令或脚本"><a href="#☆实例命令或脚本" class="headerlink" title="☆实例命令或脚本"></a>☆实例命令或脚本</h3><h4 id="显示-proc-meminfo文件中以不区分大小的s开头的行；"><a href="#显示-proc-meminfo文件中以不区分大小的s开头的行；" class="headerlink" title="显示/proc/meminfo文件中以不区分大小的s开头的行；"></a>显示/proc/meminfo文件中以不区分大小的s开头的行；</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grep -i <span class="string">'^s'</span> /proc/meminfo</span><br><span class="line"></span><br><span class="line">grep <span class="string">'^[sS]'</span> /proc/meminfo</span><br></pre></td></tr></table></figure>
+<h4 id="显示-etc-passwd中以nologin结尾的行"><a href="#显示-etc-passwd中以nologin结尾的行" class="headerlink" title="显示/etc/passwd中以nologin结尾的行;"></a>显示/etc/passwd中以nologin结尾的行;</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'nologin$'</span> /etc/passwd</span><br></pre></td></tr></table></figure>
+<h4 id="显示-etc-inittab中以-开头，且后面跟一个或多个空白字符，而后又跟了任意非空白字符的行；"><a href="#显示-etc-inittab中以-开头，且后面跟一个或多个空白字符，而后又跟了任意非空白字符的行；" class="headerlink" title="显示/etc/inittab中以#开头，且后面跟一个或多个空白字符，而后又跟了任意非空白字符的行；"></a>显示/etc/inittab中以#开头，且后面跟一个或多个空白字符，而后又跟了任意非空白字符的行；</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^#[[:space:]]\&#123;1,\&#125;[^[:space:]]*'</span> /etc/inittab</span><br></pre></td></tr></table></figure>
+<h4 id="显示-etc-inittab中包含了-一个数字-即两个冒号中间一个数字-的行；"><a href="#显示-etc-inittab中包含了-一个数字-即两个冒号中间一个数字-的行；" class="headerlink" title="显示/etc/inittab中包含了:一个数字:(即两个冒号中间一个数字)的行；"></a>显示/etc/inittab中包含了:一个数字:(即两个冒号中间一个数字)的行；</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">':[0-9]:'</span> /etc/inittab</span><br></pre></td></tr></table></figure>
+<h4 id="显示-boot-grub-grub-conf文件中以一个或多个空白字符开头的行；"><a href="#显示-boot-grub-grub-conf文件中以一个或多个空白字符开头的行；" class="headerlink" title="显示/boot/grub/grub.conf文件中以一个或多个空白字符开头的行；"></a>显示/boot/grub/grub.conf文件中以一个或多个空白字符开头的行；</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^[[:space:]]\&#123;1,\&#125;'</span> /boot/grub/grub.conf</span><br></pre></td></tr></table></figure>
+<h4 id="显示-etc-inittab文件中以一个数字开头并以一个与开头数字相同的数字结尾的行；"><a href="#显示-etc-inittab文件中以一个数字开头并以一个与开头数字相同的数字结尾的行；" class="headerlink" title="显示/etc/inittab文件中以一个数字开头并以一个与开头数字相同的数字结尾的行；"></a>显示/etc/inittab文件中以一个数字开头并以一个与开头数字相同的数字结尾的行；</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'^\([0-9]\).*\1$'</span> /etc/inittab</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -907,7 +907,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-命令"><span class="nav-number">1.</span> <span class="nav-text">grep 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-作用："><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 作用：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-选项："><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 选项：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式"><span class="nav-number">2.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-基本正则表达式："><span class="nav-number">2.0.1.</span> <span class="nav-text">1. 基本正则表达式：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-扩展正则表达式："><span class="nav-number">2.0.2.</span> <span class="nav-text">2. 扩展正则表达式：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#☆实例命令或脚本"><span class="nav-number">3.</span> <span class="nav-text">☆实例命令或脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、显示-proc-meminfo文件中以不区分大小的s开头的行；"><span class="nav-number">3.0.1.</span> <span class="nav-text">1、显示/proc/meminfo文件中以不区分大小的s开头的行；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、显示-etc-passwd中以nologin结尾的行"><span class="nav-number">3.0.2.</span> <span class="nav-text">2、显示/etc/passwd中以nologin结尾的行;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、显示-etc-inittab中以-开头，且后面跟一个或多个空白字符，而后又跟了任意非空白字符的行；"><span class="nav-number">3.0.3.</span> <span class="nav-text">3、显示/etc/inittab中以#开头，且后面跟一个或多个空白字符，而后又跟了任意非空白字符的行；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、显示-etc-inittab中包含了-一个数字-即两个冒号中间一个数字-的行；"><span class="nav-number">3.0.4.</span> <span class="nav-text">4、显示/etc/inittab中包含了:一个数字:(即两个冒号中间一个数字)的行；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5、显示-boot-grub-grub-conf文件中以一个或多个空白字符开头的行；"><span class="nav-number">3.0.5.</span> <span class="nav-text">5、显示/boot/grub/grub.conf文件中以一个或多个空白字符开头的行；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6、显示-etc-inittab文件中以一个数字开头并以一个与开头数字相同的数字结尾的行；"><span class="nav-number">3.0.6.</span> <span class="nav-text">6、显示/etc/inittab文件中以一个数字开头并以一个与开头数字相同的数字结尾的行；</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-命令"><span class="nav-number">1.</span> <span class="nav-text">grep 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用："><span class="nav-number">1.1.</span> <span class="nav-text">作用：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选项："><span class="nav-number">1.2.</span> <span class="nav-text">选项：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式"><span class="nav-number">2.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本正则表达式："><span class="nav-number">2.1.</span> <span class="nav-text">基本正则表达式：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展正则表达式："><span class="nav-number">2.2.</span> <span class="nav-text">扩展正则表达式：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#☆实例命令或脚本"><span class="nav-number">3.</span> <span class="nav-text">☆实例命令或脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#显示-proc-meminfo文件中以不区分大小的s开头的行；"><span class="nav-number">3.1.</span> <span class="nav-text">显示/proc/meminfo文件中以不区分大小的s开头的行；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示-etc-passwd中以nologin结尾的行"><span class="nav-number">3.2.</span> <span class="nav-text">显示/etc/passwd中以nologin结尾的行;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示-etc-inittab中以-开头，且后面跟一个或多个空白字符，而后又跟了任意非空白字符的行；"><span class="nav-number">3.3.</span> <span class="nav-text">显示/etc/inittab中以#开头，且后面跟一个或多个空白字符，而后又跟了任意非空白字符的行；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示-etc-inittab中包含了-一个数字-即两个冒号中间一个数字-的行；"><span class="nav-number">3.4.</span> <span class="nav-text">显示/etc/inittab中包含了:一个数字:(即两个冒号中间一个数字)的行；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示-boot-grub-grub-conf文件中以一个或多个空白字符开头的行；"><span class="nav-number">3.5.</span> <span class="nav-text">显示/boot/grub/grub.conf文件中以一个或多个空白字符开头的行；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示-etc-inittab文件中以一个数字开头并以一个与开头数字相同的数字结尾的行；"><span class="nav-number">3.6.</span> <span class="nav-text">显示/etc/inittab文件中以一个数字开头并以一个与开头数字相同的数字结尾的行；</span></a></li></ol></li></ol></div>
             
 
           </div>
