@@ -99,18 +99,18 @@
 
 
 
-  <meta name="description" content="命令简介sed特性  流编辑器（Stream EDiter） 行编辑器   sed工作模式  每次读取指定文件中和Pattern相匹配的行到内存（模式空间）中； 而后根据指定的命令对模式空间的文本进行编辑； 最后输出整个模式空间中的内容。   用法详解命令格式1sed [options] &apos;AddressCommand&apos; FILENAME Address">
+  <meta name="description" content="命令简介sed特性  流编辑器（Stream EDiter） 行编辑器   sed工作模式  每次读取指定文件中和Pattern相匹配的行到内存（模式空间）中； 而后根据指定的命令对模式空间的文本进行编辑； 最后输出整个模式空间中的内容。   用法详解命令格式1sed [options] &apos;AddressCommand&apos; FILENAME Address  StartLine,EndLine 比如">
 <meta name="keywords" content="Linux,Shell,bash,sed">
 <meta property="og:type" content="article">
 <meta property="og:title" content="流编辑器 sed 的使用（基础篇）">
 <meta property="og:url" content="http://yoursite.com/2018/04/17/sed_basic/index.html">
 <meta property="og:site_name" content="胖勇de小窝">
-<meta property="og:description" content="命令简介sed特性  流编辑器（Stream EDiter） 行编辑器   sed工作模式  每次读取指定文件中和Pattern相匹配的行到内存（模式空间）中； 而后根据指定的命令对模式空间的文本进行编辑； 最后输出整个模式空间中的内容。   用法详解命令格式1sed [options] &apos;AddressCommand&apos; FILENAME Address">
+<meta property="og:description" content="命令简介sed特性  流编辑器（Stream EDiter） 行编辑器   sed工作模式  每次读取指定文件中和Pattern相匹配的行到内存（模式空间）中； 而后根据指定的命令对模式空间的文本进行编辑； 最后输出整个模式空间中的内容。   用法详解命令格式1sed [options] &apos;AddressCommand&apos; FILENAME Address  StartLine,EndLine 比如">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-20T11:05:01.582Z">
+<meta property="og:updated_time" content="2018-04-21T02:22:11.936Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="流编辑器 sed 的使用（基础篇）">
-<meta name="twitter:description" content="命令简介sed特性  流编辑器（Stream EDiter） 行编辑器   sed工作模式  每次读取指定文件中和Pattern相匹配的行到内存（模式空间）中； 而后根据指定的命令对模式空间的文本进行编辑； 最后输出整个模式空间中的内容。   用法详解命令格式1sed [options] &apos;AddressCommand&apos; FILENAME Address">
+<meta name="twitter:description" content="命令简介sed特性  流编辑器（Stream EDiter） 行编辑器   sed工作模式  每次读取指定文件中和Pattern相匹配的行到内存（模式空间）中； 而后根据指定的命令对模式空间的文本进行编辑； 最后输出整个模式空间中的内容。   用法详解命令格式1sed [options] &apos;AddressCommand&apos; FILENAME Address  StartLine,EndLine 比如">
 
 
 
@@ -421,7 +421,80 @@
 </ol>
 </blockquote>
 <h3 id="用法详解"><a href="#用法详解" class="headerlink" title="用法详解"></a>用法详解</h3><h4 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed [options] <span class="string">'AddressCommand'</span> FILENAME</span><br></pre></td></tr></table></figure>
-<h4 id="Address"><a href="#Address" class="headerlink" title="Address"></a>Address</h4>
+<h4 id="Address"><a href="#Address" class="headerlink" title="Address"></a>Address</h4><blockquote>
+<ol>
+<li>StartLine,EndLine<br> 比如： 1,100 （第1行到第100行）$=最后一行</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>/RegExp/<br> 被正则表达式匹配的行</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>/RegExp1/,/RegExp2/<br> 从==第一次==被RE1匹配的行，到==第一次==被RE2匹配的行</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>LineNumber<br> 指定的行</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="5">
+<li>StartLine, +N<br> 从StartLine开始，向后的N行</li>
+</ol>
+</blockquote>
+<h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d</td>
+<td>删除符合条件的行</td>
+</tr>
+<tr>
+<td>p</td>
+<td>显示符合条件的行</td>
+</tr>
+<tr>
+<td>a \STRING</td>
+<td>在指定行==后面==追加新行，内容为STRING【\n可以用于换行】</td>
+</tr>
+<tr>
+<td>i \STRING</td>
+<td>在指定行==前面==追加新行，内容为STRING【\n可以用于换行】</td>
+</tr>
+<tr>
+<td>r FIEL</td>
+<td>将指定文件的内容添加至符合条件的行处</td>
+</tr>
+<tr>
+<td>w FILE</td>
+<td>将地址指定的范围内的行另存为到指定文件中</td>
+</tr>
+<tr>
+<td>s/RegExp/STRING/x</td>
+<td>查找指定行中符合RegExp匹配的字符串并用STRING替换，默认仅替换每行中第一次被匹配的字符串。【x=修饰符：g=全局替换；i=忽略大小写】【可以使用后向引用\(\),\1】【&amp;=引用被RegExp匹配到的整个字符串】</td>
+</tr>
+<tr>
+<td>s###,s@@@,s%%%…</td>
+<td>=s///【大多数字符都可以用来分割】</td>
+</tr>
+</tbody>
+</table>
+<h3 id="用法练习"><a href="#用法练习" class="headerlink" title="用法练习"></a>用法练习</h3><h4 id="删除-etc-grub-conf文件中行首的空白符；"><a href="#删除-etc-grub-conf文件中行首的空白符；" class="headerlink" title="删除/etc/grub.conf文件中行首的空白符；"></a>删除/etc/grub.conf文件中行首的空白符；</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/^[[:space:]]*//'</span> /etc/grub.conf</span><br></pre></td></tr></table></figure>
+<h4 id="替换-etc-inittab文件中”id-3-initdefault-”一行中的数字为5；"><a href="#替换-etc-inittab文件中”id-3-initdefault-”一行中的数字为5；" class="headerlink" title="替换/etc/inittab文件中”id:3:initdefault:”一行中的数字为5；"></a>替换/etc/inittab文件中”id:3:initdefault:”一行中的数字为5；</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/id:[[:digit:]]*:initdefault:/id:5:initdefault:/'</span> /etc/inittab</span><br></pre></td></tr></table></figure>
+<h4 id="删除-etc-inittab文件中的空白行；"><a href="#删除-etc-inittab文件中的空白行；" class="headerlink" title="删除/etc/inittab文件中的空白行；"></a>删除/etc/inittab文件中的空白行；</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'/^$/d'</span> /etc/inittab</span><br></pre></td></tr></table></figure>
+<h4 id="删除-etc-inittab文件中开头的-号"><a href="#删除-etc-inittab文件中开头的-号" class="headerlink" title="删除/etc/inittab文件中开头的#号;"></a>删除/etc/inittab文件中开头的#号;</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/^#//'</span> /etc/inittab</span><br></pre></td></tr></table></figure>
+<h4 id="删除某文件中开头的-号及后面的空白字符，但要求-号后面必须有空白字符"><a href="#删除某文件中开头的-号及后面的空白字符，但要求-号后面必须有空白字符" class="headerlink" title="删除某文件中开头的#号及后面的空白字符，但要求#号后面必须有空白字符;"></a>删除某文件中开头的#号及后面的空白字符，但要求#号后面必须有空白字符;</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/^#[[:space:]]\&#123;1,\&#125;//'</span> /etc/inittab</span><br></pre></td></tr></table></figure>
+<h4 id="删除某文件中以空白字符后面跟-类的行中的开头的空白字符及"><a href="#删除某文件中以空白字符后面跟-类的行中的开头的空白字符及" class="headerlink" title="删除某文件中以空白字符后面跟#类的行中的开头的空白字符及"></a>删除某文件中以空白字符后面跟#类的行中的开头的空白字符及</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">'s/^[[:space:]]\&#123;1,\&#125;#//'</span> /etc/inittab</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -658,7 +731,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令简介"><span class="nav-number">1.</span> <span class="nav-text">命令简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sed特性"><span class="nav-number">1.1.</span> <span class="nav-text">sed特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sed工作模式"><span class="nav-number">1.2.</span> <span class="nav-text">sed工作模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法详解"><span class="nav-number">2.</span> <span class="nav-text">用法详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命令格式"><span class="nav-number">2.1.</span> <span class="nav-text">命令格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Address"><span class="nav-number">2.2.</span> <span class="nav-text">Address</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令简介"><span class="nav-number">1.</span> <span class="nav-text">命令简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sed特性"><span class="nav-number">1.1.</span> <span class="nav-text">sed特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sed工作模式"><span class="nav-number">1.2.</span> <span class="nav-text">sed工作模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法详解"><span class="nav-number">2.</span> <span class="nav-text">用法详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命令格式"><span class="nav-number">2.1.</span> <span class="nav-text">命令格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Address"><span class="nav-number">2.2.</span> <span class="nav-text">Address</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Command"><span class="nav-number">2.3.</span> <span class="nav-text">Command</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法练习"><span class="nav-number">3.</span> <span class="nav-text">用法练习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-etc-grub-conf文件中行首的空白符；"><span class="nav-number">3.1.</span> <span class="nav-text">删除/etc/grub.conf文件中行首的空白符；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换-etc-inittab文件中”id-3-initdefault-”一行中的数字为5；"><span class="nav-number">3.2.</span> <span class="nav-text">替换/etc/inittab文件中”id:3:initdefault:”一行中的数字为5；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-etc-inittab文件中的空白行；"><span class="nav-number">3.3.</span> <span class="nav-text">删除/etc/inittab文件中的空白行；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-etc-inittab文件中开头的-号"><span class="nav-number">3.4.</span> <span class="nav-text">删除/etc/inittab文件中开头的#号;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除某文件中开头的-号及后面的空白字符，但要求-号后面必须有空白字符"><span class="nav-number">3.5.</span> <span class="nav-text">删除某文件中开头的#号及后面的空白字符，但要求#号后面必须有空白字符;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除某文件中以空白字符后面跟-类的行中的开头的空白字符及"><span class="nav-number">3.6.</span> <span class="nav-text">删除某文件中以空白字符后面跟#类的行中的开头的空白字符及</span></a></li></ol></li></ol></div>
             
 
           </div>
