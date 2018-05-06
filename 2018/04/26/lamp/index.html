@@ -102,7 +102,7 @@
   <meta name="description" content="更新日志    2018-04-26: 创建  2018-04-28: 添加图片   预安装环境   属性 服务端 客户端     系统 CentOS 6.9 Windows 10 Chrome   IP/MASK 192.168.1.125/24 192.168.1.119/24   GATEWAY 192.168.1.1 192.168.1.1   DNS  59.49.49.49    配置">
 <meta name="keywords" content="Linux,LAMP,Web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux服务——web（LAMP）">
+<meta property="og:title" content="Linux服务——web（LAMP环境搭建）">
 <meta property="og:url" content="http://yoursite.com/2018/04/26/lamp/index.html">
 <meta property="og:site_name" content="胖勇de小窝">
 <meta property="og:description" content="更新日志    2018-04-26: 创建  2018-04-28: 添加图片   预安装环境   属性 服务端 客户端     系统 CentOS 6.9 Windows 10 Chrome   IP/MASK 192.168.1.125/24 192.168.1.119/24   GATEWAY 192.168.1.1 192.168.1.1   DNS  59.49.49.49    配置">
@@ -111,9 +111,9 @@
 <meta property="og:image" content="http://p7b7this6.bkt.clouddn.com/18-5-6/2685760.jpg">
 <meta property="og:image" content="http://p7b7this6.bkt.clouddn.com/18-5-6/18875061.jpg">
 <meta property="og:image" content="http://p7b7this6.bkt.clouddn.com/18-5-6/11886655.jpg">
-<meta property="og:updated_time" content="2018-05-06T01:09:29.323Z">
+<meta property="og:updated_time" content="2018-05-06T05:29:11.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux服务——web（LAMP）">
+<meta name="twitter:title" content="Linux服务——web（LAMP环境搭建）">
 <meta name="twitter:description" content="更新日志    2018-04-26: 创建  2018-04-28: 添加图片   预安装环境   属性 服务端 客户端     系统 CentOS 6.9 Windows 10 Chrome   IP/MASK 192.168.1.125/24 192.168.1.119/24   GATEWAY 192.168.1.1 192.168.1.1   DNS  59.49.49.49    配置">
 <meta name="twitter:image" content="http://p7b7this6.bkt.clouddn.com/18-5-6/10061803.jpg">
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>Linux服务——web（LAMP） | 胖勇de小窝</title>
+  <title>Linux服务——web（LAMP环境搭建） | 胖勇de小窝</title>
   
 
 
@@ -331,7 +331,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux服务——web（LAMP）
+          <h1 class="post-title" itemprop="name headline">Linux服务——web（LAMP环境搭建）
               
             
           </h1>
@@ -378,7 +378,7 @@
                   ， 
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Liunx运维/服务/" itemprop="url" rel="index"><span itemprop="name">服务</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Liunx运维/网络服务/" itemprop="url" rel="index"><span itemprop="name">网络服务</span></a></span>
 
                 
                 
@@ -418,7 +418,7 @@
 <p>2018-04-26: 创建<br>  2018-04-28: 添加图片</p>
 </blockquote>
 <hr>
-<h3 id="预安装环境"><a href="#预安装环境" class="headerlink" title="预安装环境"></a>预安装环境</h3><table>
+<h2 id="预安装环境"><a href="#预安装环境" class="headerlink" title="预安装环境"></a>预安装环境</h2><table>
 <thead>
 <tr>
 <th>属性</th>
@@ -449,9 +449,9 @@
 </tr>
 </tbody>
 </table>
-<h4 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/iptables</span><br><span class="line"><span class="comment"># 添加以下内容到22端口之后</span></span><br><span class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启防火墙</span></span><br><span class="line">/etc/init.d/iptables restart  </span><br><span class="line"><span class="comment">#service iptables restart</span></span><br></pre></td></tr></table></figure>
-<h4 id="关闭SELinux"><a href="#关闭SELinux" class="headerlink" title="关闭SELinux"></a>关闭SELinux</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line"></span><br><span class="line"><span class="comment">#SELINUX=enforcing #注释掉</span></span><br><span class="line"><span class="comment">#SELINUXTYPE=targeted #注释掉</span></span><br><span class="line">SELINUX=disabled <span class="comment">#增加</span></span><br><span class="line"></span><br><span class="line">setenforce 0 <span class="comment"># 或者重启</span></span><br></pre></td></tr></table></figure>
-<h3 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">yum -y install httpd</span><br><span class="line"><span class="comment"># 开机自启动httpd</span></span><br><span class="line">chkconfig httpd on</span><br><span class="line"><span class="comment"># 开启服务httpd</span></span><br><span class="line">/etc/init.d/httpd start <span class="comment">#或者 service httpd start</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装一些Apache扩展</span></span><br><span class="line">yum -y install httpd-manual mod_ssl mod_perl mod_auth_mysql</span><br></pre></td></tr></table></figure>
+<h3 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/iptables</span><br><span class="line"><span class="comment"># 添加以下内容到22端口之后</span></span><br><span class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启防火墙</span></span><br><span class="line">/etc/init.d/iptables restart  </span><br><span class="line"><span class="comment">#service iptables restart</span></span><br></pre></td></tr></table></figure>
+<h3 id="关闭SELinux"><a href="#关闭SELinux" class="headerlink" title="关闭SELinux"></a>关闭SELinux</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/selinux/config</span><br><span class="line"></span><br><span class="line"><span class="comment">#SELINUX=enforcing #注释掉</span></span><br><span class="line"><span class="comment">#SELINUXTYPE=targeted #注释掉</span></span><br><span class="line">SELINUX=disabled <span class="comment">#增加</span></span><br><span class="line"></span><br><span class="line">setenforce 0 <span class="comment"># 或者重启</span></span><br></pre></td></tr></table></figure>
+<h2 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h2><h3 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">yum -y install httpd</span><br><span class="line"><span class="comment"># 开机自启动httpd</span></span><br><span class="line">chkconfig httpd on</span><br><span class="line"><span class="comment"># 开启服务httpd</span></span><br><span class="line">/etc/init.d/httpd start <span class="comment">#或者 service httpd start</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装一些Apache扩展</span></span><br><span class="line">yum -y install httpd-manual mod_ssl mod_perl mod_auth_mysql</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>测试方法<br>  Windows主机浏览器输入 <a href="http://192.168.1.125，显示以下内容：" target="_blank" rel="noopener">http://192.168.1.125，显示以下内容：</a><br>  <img src="http://p7b7this6.bkt.clouddn.com/18-5-6/10061803.jpg" alt=""></p>
 </blockquote>
@@ -466,7 +466,9 @@
 <blockquote>
 <p>Windows主机浏览器输入 <a href="http://192.168.1.125，显示以下内容：" target="_blank" rel="noopener">http://192.168.1.125，显示以下内容：</a><br><img src="http://p7b7this6.bkt.clouddn.com/18-5-6/18875061.jpg" alt=""></p>
 </blockquote>
-<h3 id="PhpMyAdmin——MySQL的前端工具"><a href="#PhpMyAdmin——MySQL的前端工具" class="headerlink" title="PhpMyAdmin——MySQL的前端工具"></a>PhpMyAdmin——MySQL的前端工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载</span></span><br><span class="line"><span class="comment"># 4.8.0.1 需要 php5.3+</span></span><br><span class="line">wget https://files.phpmyadmin.net/phpMyAdmin/4.8.0.1/phpMyAdmin-4.8.0.1-all-languages.zip</span><br><span class="line">wget https://files.phpmyadmin.net/phpMyAdmin/4.0.10.20/phpMyAdmin-4.0.10.20-all-languages.zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">unzip phpMyAdmin-4.2.6-all-languages.zip</span><br><span class="line">mv phpMyAdmin-4.2.6-all-languages /usr/<span class="built_in">local</span></span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/phpMyAdmin-4.2.6-all-languages /var/www/html/phpmyadmin</span><br><span class="line"><span class="built_in">cd</span> /var/www/html/phpmyadmin</span><br><span class="line"></span><br><span class="line"><span class="comment">#  更改phpmyadmin配置文件</span></span><br><span class="line">cp libraries/config.default.php config.inc.php</span><br><span class="line">vi cnfig.inc.php</span><br><span class="line"><span class="comment"># 更改以下内容</span></span><br><span class="line"><span class="variable">$cfg</span>[<span class="string">'PmaAbsoluteUri'</span>] = <span class="string">''</span>;这里填写 phpMyAdmin 的访问网址。</span><br><span class="line"><span class="variable">$cfg</span>[<span class="string">'Servers'</span>][<span class="variable">$i</span>][<span class="string">'host'</span>] = <span class="string">'localhost'</span>; // MySQL hostname or IP address</span><br><span class="line"><span class="variable">$cfg</span>[<span class="string">'Servers'</span>][<span class="variable">$i</span>][<span class="string">'port'</span>] = <span class="string">''</span>; // MySQL port - leave blank <span class="keyword">for</span> default port</span><br><span class="line"><span class="variable">$cfg</span>[<span class="string">'Servers'</span>][<span class="variable">$i</span>][<span class="string">'user'</span>] = <span class="string">'root'</span>; // 填写 MySQL 访问 phpMyAdmin 使用的 MySQL 用户名，默认为 root。</span><br><span class="line"><span class="built_in">fg</span>[<span class="string">'Servers'</span>][<span class="variable">$i</span>][<span class="string">'password'</span>] = <span class="string">''</span>; // 填写对应上述 MySQL 用户名的密码。</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启httpd服务，这一步很重要</span></span><br><span class="line">/etc/init.d/httpd restart <span class="comment">#或者 service httpd restart</span></span><br></pre></td></tr></table></figure>
+<h2 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h2><p>待添加</p>
+<p><a href="https://www.cnblogs.com/guishou/articles/7045940.html" target="_blank" rel="noopener">https://www.cnblogs.com/guishou/articles/7045940.html</a></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="PhpMyAdmin——MySQL的前端工具"><a href="#PhpMyAdmin——MySQL的前端工具" class="headerlink" title="PhpMyAdmin——MySQL的前端工具"></a>PhpMyAdmin——MySQL的前端工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载</span></span><br><span class="line"><span class="comment"># 4.8.0.1 需要 php5.3+</span></span><br><span class="line">wget https://files.phpmyadmin.net/phpMyAdmin/4.8.0.1/phpMyAdmin-4.8.0.1-all-languages.zip</span><br><span class="line">wget https://files.phpmyadmin.net/phpMyAdmin/4.0.10.20/phpMyAdmin-4.0.10.20-all-languages.zip</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">unzip phpMyAdmin-4.2.6-all-languages.zip</span><br><span class="line">mv phpMyAdmin-4.2.6-all-languages /usr/<span class="built_in">local</span></span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/phpMyAdmin-4.2.6-all-languages /var/www/html/phpmyadmin</span><br><span class="line"><span class="built_in">cd</span> /var/www/html/phpmyadmin</span><br><span class="line"></span><br><span class="line"><span class="comment">#  更改phpmyadmin配置文件</span></span><br><span class="line">cp libraries/config.default.php config.inc.php</span><br><span class="line">vi cnfig.inc.php</span><br><span class="line"><span class="comment"># 更改以下内容</span></span><br><span class="line"><span class="variable">$cfg</span>[<span class="string">'PmaAbsoluteUri'</span>] = <span class="string">''</span>;这里填写 phpMyAdmin 的访问网址。</span><br><span class="line"><span class="variable">$cfg</span>[<span class="string">'Servers'</span>][<span class="variable">$i</span>][<span class="string">'host'</span>] = <span class="string">'localhost'</span>; // MySQL hostname or IP address</span><br><span class="line"><span class="variable">$cfg</span>[<span class="string">'Servers'</span>][<span class="variable">$i</span>][<span class="string">'port'</span>] = <span class="string">''</span>; // MySQL port - leave blank <span class="keyword">for</span> default port</span><br><span class="line"><span class="variable">$cfg</span>[<span class="string">'Servers'</span>][<span class="variable">$i</span>][<span class="string">'user'</span>] = <span class="string">'root'</span>; // 填写 MySQL 访问 phpMyAdmin 使用的 MySQL 用户名，默认为 root。</span><br><span class="line"><span class="built_in">fg</span>[<span class="string">'Servers'</span>][<span class="variable">$i</span>][<span class="string">'password'</span>] = <span class="string">''</span>; // 填写对应上述 MySQL 用户名的密码。</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启httpd服务，这一步很重要</span></span><br><span class="line">/etc/init.d/httpd restart <span class="comment">#或者 service httpd restart</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>测试方法<br>Windows主机浏览器输入 <a href="http://192.168.1.125/phpmyadmin，显示以下内容" target="_blank" rel="noopener">http://192.168.1.125/phpmyadmin，显示以下内容</a><br><img src="http://p7b7this6.bkt.clouddn.com/18-5-6/11886655.jpg" alt=""></p>
 </blockquote>
@@ -596,7 +598,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -608,6 +610,8 @@
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
                     
+                    
+                      
                     
                       
                     
@@ -688,7 +692,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -748,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#预安装环境"><span class="nav-number">1.</span> <span class="nav-text">预安装环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置防火墙"><span class="nav-number">1.1.</span> <span class="nav-text">配置防火墙</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭SELinux"><span class="nav-number">1.2.</span> <span class="nav-text">关闭SELinux</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache"><span class="nav-number">2.</span> <span class="nav-text">Apache</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL"><span class="nav-number">3.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP"><span class="nav-number">4.</span> <span class="nav-text">PHP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PhpMyAdmin——MySQL的前端工具"><span class="nav-number">5.</span> <span class="nav-text">PhpMyAdmin——MySQL的前端工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些报错"><span class="nav-number">6.</span> <span class="nav-text">一些报错</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#预安装环境"><span class="nav-number">1.</span> <span class="nav-text">预安装环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置防火墙"><span class="nav-number">1.1.</span> <span class="nav-text">配置防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭SELinux"><span class="nav-number">1.2.</span> <span class="nav-text">关闭SELinux</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum安装"><span class="nav-number">2.</span> <span class="nav-text">yum安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache"><span class="nav-number">2.1.</span> <span class="nav-text">Apache</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL"><span class="nav-number">2.2.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP"><span class="nav-number">2.3.</span> <span class="nav-text">PHP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码编译安装"><span class="nav-number">3.</span> <span class="nav-text">源码编译安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PhpMyAdmin——MySQL的前端工具"><span class="nav-number">4.1.</span> <span class="nav-text">PhpMyAdmin——MySQL的前端工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些报错"><span class="nav-number">4.2.</span> <span class="nav-text">一些报错</span></a></li></ol></li></ol></div>
             
 
           </div>
