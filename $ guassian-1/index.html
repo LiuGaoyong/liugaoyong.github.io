@@ -99,18 +99,22 @@
 
 
 
-  <meta name="description" content="更新日志    2018-02-12: 创建    从上一节的 water 的例子我们计算了水分子，具体输入文件：  再谈今天的主题之前，需要大致了解 Gaussian 计算任务的类型">
+  <meta name="description" content="更新日志    2018-02-12: 创建    从上一节的 water 的例子我们计算了水分子，具体输入文件：上面的输入就是计算了水分子的单点能（Single Point Energy，关键字 SP可省略），那么我们通过单点能计算可以得到那些结果呢？也即，从单点能计算的计算结果中，可以进行那些分析得到那些信息呢？  体系能量值 我们知道，在微观世界中，能量值得地位举足轻重。那么SPE计算得到的">
 <meta name="keywords" content="Computational Chemistry,Gaussian">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Gaussain 09 的单点能计算">
+<meta property="og:title" content="单点能(SPE)计算的结果">
 <meta property="og:url" content="http://yoursite.com/$ guassian-1/index.html">
 <meta property="og:site_name" content="胖勇の小窝">
-<meta property="og:description" content="更新日志    2018-02-12: 创建    从上一节的 water 的例子我们计算了水分子，具体输入文件：  再谈今天的主题之前，需要大致了解 Gaussian 计算任务的类型">
+<meta property="og:description" content="更新日志    2018-02-12: 创建    从上一节的 water 的例子我们计算了水分子，具体输入文件：上面的输入就是计算了水分子的单点能（Single Point Energy，关键字 SP可省略），那么我们通过单点能计算可以得到那些结果呢？也即，从单点能计算的计算结果中，可以进行那些分析得到那些信息呢？  体系能量值 我们知道，在微观世界中，能量值得地位举足轻重。那么SPE计算得到的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-03T12:38:30.700Z">
+<meta property="og:image" content="http://p7b7this6.bkt.clouddn.com/18-6-3/82020918.jpg">
+<meta property="og:image" content="http://p7b7this6.bkt.clouddn.com/18-6-3/84397485.jpg">
+<meta property="og:image" content="http://p7b7this6.bkt.clouddn.com/18-6-3/89646817.jpg">
+<meta property="og:updated_time" content="2018-06-03T13:40:16.076Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gaussain 09 的单点能计算">
-<meta name="twitter:description" content="更新日志    2018-02-12: 创建    从上一节的 water 的例子我们计算了水分子，具体输入文件：  再谈今天的主题之前，需要大致了解 Gaussian 计算任务的类型">
+<meta name="twitter:title" content="单点能(SPE)计算的结果">
+<meta name="twitter:description" content="更新日志    2018-02-12: 创建    从上一节的 water 的例子我们计算了水分子，具体输入文件：上面的输入就是计算了水分子的单点能（Single Point Energy，关键字 SP可省略），那么我们通过单点能计算可以得到那些结果呢？也即，从单点能计算的计算结果中，可以进行那些分析得到那些信息呢？  体系能量值 我们知道，在微观世界中，能量值得地位举足轻重。那么SPE计算得到的">
+<meta name="twitter:image" content="http://p7b7this6.bkt.clouddn.com/18-6-3/82020918.jpg">
 
 
 
@@ -127,7 +131,7 @@
   };
 </script>
 
-  <title>Gaussain 09 的单点能计算 | 胖勇の小窝</title>
+  <title>单点能(SPE)计算的结果 | 胖勇の小窝</title>
   
 
 
@@ -326,7 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Gaussain 09 的单点能计算
+          <h1 class="post-title" itemprop="name headline">单点能(SPE)计算的结果
               
             
           </h1>
@@ -421,9 +425,13 @@
 </blockquote>
 <hr>
 <blockquote>
-<p>从<a href="https://liugaoyong.github.io/gaussian-0/" target="_blank" rel="noopener">上一节</a>的 water 的例子我们计算了水分子，具体输入文件：</p>
+<p>从<a href="https://liugaoyong.github.io/gaussian-0/" target="_blank" rel="noopener">上一节</a>的 water 的例子我们计算了水分子，具体输入文件：<img src="http://p7b7this6.bkt.clouddn.com/18-6-3/82020918.jpg" alt=""><br>上面的输入就是计算了水分子的单点能（Single Point Energy，关键字 SP可省略），那么我们通过单点能计算可以得到那些结果呢？也即，从单点能计算的计算结果中，可以进行那些分析得到那些信息呢？</p>
 </blockquote>
-<p>再谈今天的主题之前，需要大致了解 Gaussian 计算任务的类型</p>
+<h3 id="体系能量值"><a href="#体系能量值" class="headerlink" title="体系能量值"></a>体系能量值</h3><blockquote>
+<p>我们知道，在微观世界中，能量值得地位举足轻重。那么SPE计算得到的能量如下图示：<br><img src="http://p7b7this6.bkt.clouddn.com/18-6-3/84397485.jpg" alt=""><br>因此，水分子的能量值 <code>E(RB3LYP, water) =  -76.4080189877 a.u.</code></p>
+<p>能量值为什么是负的呢？<br>我们常说，世界最高峰是珠穆朗玛峰，有多高？8844米。（参见<a href="https://en.wikipedia.org/wiki/Mount_Everest" target="_blank" rel="noopener">维基百科</a>）那么0米在哪里？海平面。我们不妨假设珠峰峰顶为0米，那么我们就在-8800米左右生活，我们就成了活在地底的人了。<br>因此，高度的绝对值是没有意义的，其相对值才是有意义的。<br>故而，当有其他分子与H2O比较才有意义，比如：C6H6的能量值<code>E(RB3LYP, benzene) =  -232.248028177 a.u.</code>。苯的能量低于水的，说明在一定的误差内，气态苯分子比气态水分子稳定。（该计算基于气态）<br><img src="http://p7b7this6.bkt.clouddn.com/18-6-3/89646817.jpg" alt=""></p>
+</blockquote>
+<p>### </p>
 
       
     </div>
@@ -520,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -754,6 +771,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#体系能量值"><span class="nav-number">1.</span> <span class="nav-text">体系能量值</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
