@@ -2,3 +2,16 @@ baseURL = "https://liugaoyong.github.io/"
 languageCode = "en-us"
 title = "Gaoyong's Blog"
 theme = "PaperMod"
+paginate = 5
+
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+enableInlineShortcodes = true
+enableRobotsTXT = true
+enableEmoji = true
+
+pygmentsUseClasses = true
+
+
