@@ -5,6 +5,10 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
+    paths-ignore: # 下列文件的变更不触发部署，可以自行添加
+      - '.gitignore'
+      - 'todo/**'
+      - 'todo-done/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
