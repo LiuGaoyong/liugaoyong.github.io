@@ -1,6 +1,10 @@
 ---
-title: "My First Post"
-date: 2023-05-29T18:49:13+08:00
-draft: false
+title: "My 1st post"
+date: 2020-09-15T11:30:03+00:00
+# weight: 1
+# aliases: ["/first"]
+tags: ["first"]
+author: "Me"   # ["Me", "You"] # multiple authors
 ---
-Hello, World.
+
+Hello, world!

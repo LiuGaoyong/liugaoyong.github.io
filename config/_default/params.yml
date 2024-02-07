@@ -1,0 +1,44 @@
+defaultTheme: light
+ShowBreadCrumbs: true
+ShowReadingTime: true # Displays Reading Time (in minutes)
+ShowPostNavLinks: true # Adds a Previous/Next post suggestion
+ShowShareButtons: false # Displays Share Buttons at Bottom of each post
+ShowCodeCopyButtons: true # Adds a copy button in code block
+
+homeInfoParams:
+  title: 👋 Welcome to Gaoyong's Blog!
+  Content: >
+    There're ...
+
+profileMode:
+  enabled: false
+  title: "<Title>" # optional default will be site title
+  subtitle: "This is subtitle"
+  imageUrl: "<image link>" # optional
+  imageTitle: "<title of image as alt>" # optional
+  imageWidth: 120 # custom size
+  imageHeight: 120 # custom size
+  buttons:
+    - name: Archive
+      url: "/archives"
+    - name: Github
+      url: "https://github.com/"
+
+socialIcons: # optional
+  - name: "github"
+    url: "<link>"
+  - name: "zhihu"
+    url: "<link2>"
+  - name: bilibili
+  - name: telegram
+  - name: x
+
+fuseOpts: # for search
+  isCaseSensitive: false
+  shouldSort: true
+  location: 0
+  distance: 1000
+  threshold: 0.4
+  minMatchCharLength: 0
+  # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+  keys: ["title", "permalink", "summary", "content"]

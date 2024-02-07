@@ -1,0 +1,15 @@
+baseURL: "https://liugaoyong.github.io"
+title: Gaoyong's Blog
+theme: PaperMod
+paginate: 5
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+disableThemeToggle: true
+googleAnalytics: UA-123-45
+pygmentsUseClasses: true
+
+ShowToc: true
+TocOpen: true
